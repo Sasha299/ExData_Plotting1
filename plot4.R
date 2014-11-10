@@ -32,25 +32,17 @@ if(is.null(y)){
 }
 
 ## Plot1 creates file Plot1.png
-png(filename = "plot4.png", width = 480, height = 480, units = "px", bg = "transparent")
+png(filename = "plot41.png", width = 480, height = 480, units = "px", bg = "transparent")
         par(mfrow = c(2, 2))
         ## First Graph
         plot(y$Global_active_power, type='l', xlab="Gobal Active Power (kilowatts)", ylab="Frequency")
-        
         ## Second graph
-        plot(y$Voltage, type='l', axes=FALSE, xlab="datetime", ylab="Voltage")
-       
-        
+        plot(y$Voltage, type='l', axes=FALSE, xlab="datetime", ylab="Voltage")      
         ## Third Graph
         plot(y$Sub_metering_1, type='l', axes=TRUE, xlab="", ylab="Energy sub metering", col="black")
         lines(y$Sub_metering_2, col="red")
         lines(y$Sub_metering_3, col="blue")
-       
-        plot(y$Sub_metering_1, type='l', axes=TRUE, xlab="", ylab="Energy sub metering", col="black")
-        lines(y$Sub_metering_2, col="red")
-        lines(y$Sub_metering_3, col="blue")
         legend("topright", col = c("black", "red", "blue"), c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lwd = 1)
-        
         ## Fourth Graph
         plot(y$Global_reactive_power, type='l', axes=FALSE, xlab="datetime", ylab="Global_Reactive_Power")
         dev.off()
